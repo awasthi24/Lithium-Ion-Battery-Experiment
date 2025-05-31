@@ -1,4 +1,4 @@
-# Lithium Ion Battery Experiment 
+# Lithium Ion Battery Experiment
 A lithium-ion battery experiment lets students observe how the battery stores and releases energy by measuring voltage during charging and discharging, helping them understand how rechargeable batteries work.
 # engineering-chemistry-lab
 Engineering Chemistry Virtual Labs
