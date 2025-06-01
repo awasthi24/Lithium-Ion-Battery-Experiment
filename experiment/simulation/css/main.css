@@ -1,1 +1,502 @@
-/* You CSS goes in here */
+    :root {
+      --beaker-outline: #111;
+      --electrolyte: #b9e0fb;
+      --electrolyte-glow: 0 0 22px #90cdf4cc;
+      --separator: #444;
+      --separator-highlight: #7db6f0;
+      --separator-dot: #fff;
+      --anode-face: #b87333;
+      --anode-side: #8a5c2d;
+      --anode-top: #d5a06f;
+      --anode-highlight: #7db6f0;
+      --cathode-face: #258a5b;
+      --cathode-side: #15523a;
+      --cathode-top: #5ad4a0;
+      --cathode-highlight: #7db6f0;
+      --connector: #b87333;
+      --connector-highlight: #7db6f0;
+      --bulb-off: #ffe066;
+      --bulb-on: #ffeb60;
+      --bulb-outline: #e6c258;
+      --bulb-glow: #fff3;
+      --ghost: rgba(255,205,0,0.14);
+      --delft-blue: #1D3461;
+      --polynesian-blue: #1F487E;
+      --lapis-lazuli: #376996;
+      --silver-lake-blue: #6290C8;
+      --vista-blue: #829CBC;
+      --main-bg: var(--lapis-lazuli);
+      --panel-bg: var(--delft-blue);
+      --component-bg: var(--polynesian-blue);
+      --component-border: var(--silver-lake-blue);
+      --instruction-bg: #f5faff;
+      --instruction-border: var(--delft-blue);
+      --label-color: #fffbe5;
+      --heading-color: #fff;
+      --component-heading-color: #fff;
+      --pointer-color: #444;
+      --pointer-shadow: #fff;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      width: 100vw; height: 100vh;
+      font-family: Arial, 'Segoe UI', Arial, sans-serif;
+      background: var(--main-bg);
+      overflow: hidden;
+    }
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      background: var(--main-bg);
+    }
+    header {
+      height: 62px;
+      background: #101d36;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.35rem;
+      font-weight: 800;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 3px 18px #101d3640;
+      letter-spacing: 1.8px;
+    }
+    #page-title {
+      font-size: 2.2rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1.8px;
+      margin: 0;
+    }
+    main {
+      flex: 1 1 auto;
+      display: flex;
+      width: 100vw;
+      height: calc(100vh - 62px);
+      background: var(--main-bg);
+      font-family: Arial, sans-serif;
+    }
+    .left-panel {
+      width: 31vw;
+      min-width: 320px;
+      max-width: 440px;
+      background: var(--panel-bg);
+      border-right: 2px solid var(--component-border);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #components-heading {
+      width: 100%;
+      font-size: 1.55rem;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      color: #fff;
+      background: #17264a;
+      padding: 22px 0 12px 36px;
+      margin: 0;
+      border-bottom: 2px solid var(--component-border);
+      text-shadow: 0 1px 14px #0007;
+    }
+    .components-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 16px 0 0 0;
+      align-items: flex-start;
+      min-height: 70vh;
+    }
+    .component-box {
+      background: var(--component-bg);
+      border-radius: 13px;
+      box-shadow: 0 2px 11px #0004;
+      padding: 10px 14px 10px 18px;
+      margin-bottom: 7px;
+      margin-right: 0;
+      margin-left: 22px;
+      width: 81%;
+      min-width: 180px;
+      max-width: 340px;
+      min-height: 61px;
+      border: 2.5px solid var(--component-border);
+      position: relative;
+      transition: box-shadow 0.18s, border-color 0.18s;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .component-box:hover, .component-box:focus-within {
+      border-color: var(--vista-blue);
+      box-shadow: 0 6px 24px #37699677;
+    }
+    .component-heading-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      min-width: 90px;
+      align-items: flex-start;
+    }
+    .component-heading {
+      font-weight: 800;
+      font-size: 1.21rem;
+      color: #fff !important;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.6px;
+      text-shadow: 0 1px 5px #0002;
+      line-height: 1.12;
+      margin-bottom: 0;
+    }
+    .component-label {
+      font-size: 1.01rem;
+      color: #111 !important;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-align: left;
+      text-shadow: 0 1px 2px #0001;
+      margin-top: 0;
+    }
+    .component-image-box {
+      background: var(--silver-lake-blue);
+      border-radius: 10px;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      box-shadow: 0 2px 8px #2222;
+      border: 2px solid var(--component-border);
+      min-width: 56px;
+      min-height: 56px;
+      max-width: 56px;
+      max-height: 56px;
+      position: relative;
+    }
+    .component-btn {
+      width: 50px; height: 50px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      outline: none;
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      transition: transform 0.18s;
+    }
+    .component-btn:focus,
+    .component-btn:hover {
+      filter: drop-shadow(0 0 8px var(--vista-blue));
+      transform: scale(1.07);
+    }
+    .component-btn.dragging {
+      z-index: 10;
+      transform: scale(1.11) rotate(-6deg);
+    }
+    .component-img-wrapper:hover .popover,
+    .component-img-wrapper:focus-within .popover {
+      display: block;
+    }
+    .popover {
+      display: none;
+      position: absolute;
+      left: 56px;
+      top: 0px;
+      z-index: 2;
+      background: var(--silver-lake-blue);
+      border: 1.5px solid var(--delft-blue);
+      color: #222;
+      padding: 10px 15px;
+      border-radius: 9px;
+      width: 220px;
+      font-size: 0.99rem;
+      box-shadow: 0 4px 18px #1118;
+      text-align: left;
+      pointer-events: none;
+    }
+    .instructions-box {
+      background: var(--instruction-bg);
+      color: #1D3461;
+      border: 3.5px solid var(--instruction-border);
+      border-radius: 14px;
+      padding: 28px 39px 32px 32px;
+      font-size: 1.15rem;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      margin: 36px 0 0 38px;
+      box-shadow: 0 2px 16px #10182822;
+      min-width: 390px;
+      max-width: 95vw;
+      min-height: 72px;
+      position: static;
+      transition: background 0.2s, border-color 0.2s;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .instructions-title {
+      font-size: 1.13rem;
+      color: var(--delft-blue);
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      margin-bottom: 3px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+   #tts-btn {
+        background: none !important;
+        border: none !important;
+        outline: none !important;
+        cursor: pointer;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+    }
+    #tts-btn svg {
+        display: block;
+    }
+    #tts-btn:hover {
+      background: #1F487E;
+    }
+    .action-btns {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0 0 10px 0;
+      /* align with instruction box */
+      padding-right: 38px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 36px;
+      right: 0;
+      z-index: 11;
+    }
+    #switch-on-btn {
+      background: #20b455;
+      color: #fff;
+      font-size: 1.18rem;
+      font-weight: 800;
+      padding: 15px ;
+      border: none;
+      border-radius: 15px;
+      margin: 0;
+      cursor: pointer;
+      box-shadow: 0 2px 18px #3887fe30;
+      letter-spacing: 0.7px;
+      transition: background 0.18s;
+      align-self: center;
+      display: block;
+    }
+    #switch-on-btn:hover {
+      background: #187c37;
+    }
+    .right-panel {
+      width: 69vw;
+      min-width: 350px;
+      background: var(--main-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .beaker-section {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+      margin-top: 0;
+    }
+    .beaker-outer {
+      width: 1000px;
+      height: 370px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 40px auto 0 auto;
+      user-select: none;
+      position: relative;
+      background: none;
+      top: 0;
+    }
+    #beaker-svg {
+      width: 980px;
+      height: 340px;
+      display: block;
+      background: none;
+      margin-left: 15px;
+      margin-right: 0;
+    }
+    #beaker-outline-rect {
+      stroke: var(--beaker-outline);
+      stroke-width: 8;
+      fill: none;
+    }
+    #electrolyte-liquid {
+      filter: blur(0.3px) drop-shadow(0 8px 14px #90cdf4bb);
+    }
+    #separator-highlight, #anode-highlight, #cathode-highlight {
+      display: none;
+      stroke: none;
+      fill: var(--separator-highlight);
+      opacity: 0.82;
+    }
+    #connector-highlight {
+      display: none;
+      stroke: var(--connector-highlight);
+      stroke-width: 12;
+      fill: none;
+      opacity: 0.95;
+    }
+    .svg-separator-dots {
+      pointer-events: none;
+    }
+    .svg-separator-dots circle {
+      fill: var(--separator-dot);
+      opacity: 0.92;
+    }
+    #svg-separator-strip {
+      fill: var(--separator);
+      opacity: 0.87;
+      stroke: #444;
+      stroke-width: 2.5;
+    }
+    .svg-anode-cuboid-face {
+      fill: var(--anode-face);
+      stroke: #a05a16;
+      stroke-width: 2.5;
+    }
+    .svg-anode-cuboid-side {
+      fill: var(--anode-side);
+      stroke: #6a4013;
+      stroke-width: 2.5;
+    }
+    .svg-anode-cuboid-top {
+      fill: var(--anode-top);
+      stroke: #c49055;
+      stroke-width: 2.5;
+    }
+    .svg-cathode-cuboid-face {
+      fill: var(--cathode-face);
+      stroke: #195d3d;
+      stroke-width: 2.5;
+    }
+    .svg-cathode-cuboid-side {
+      fill: var(--cathode-side);
+      stroke: #195d3d;
+      stroke-width: 2.5;
+    }
+    .svg-cathode-cuboid-top {
+      fill: var(--cathode-top);
+      stroke: #5ad4a0;
+      stroke-width: 2.5;
+    }
+    .svg-connector-wire {
+      stroke: var(--connector);
+      stroke-width: 8;
+      fill: none;
+      filter: drop-shadow(0 0 13px #fff3);
+    }
+    .svg-connector-wire-outline {
+      stroke: var(--connector-highlight);
+      stroke-width: 16;
+      fill: none;
+      opacity: 0.45;
+      filter: none;
+      pointer-events: none;
+      display: none;
+    }
+    .svg-bulb-outline {
+      stroke: var(--connector-highlight);
+      stroke-width: 9;
+      fill: none;
+      opacity: 0.95;
+      filter: none;
+      pointer-events: none;
+      display: none;
+    }
+    .svg-bulb {
+      fill: var(--bulb-off);
+      stroke: #ccad34;
+      stroke-width: 3;
+      opacity: 1;
+      filter: none;
+    }
+    .svg-bulb.on {
+      fill: var(--bulb-on);
+      filter: drop-shadow(0 0 32px #fff78a);
+      stroke: #e6c258;
+      opacity: 1;
+    }
+    .diagram-label-box {
+      fill: #fff;
+      stroke: #b3b3b3;
+      stroke-width: 1.3;
+      rx: 6;
+      opacity: 0.93;
+      filter: drop-shadow(0 2px 10px #0002);
+    }
+    .diagram-label {
+      font-family: Arial, sans-serif;
+      font-size: 1.01rem;
+      font-weight: 700;
+      fill: #222;
+      stroke: none;
+      paint-order: stroke fill;
+      letter-spacing: 0.1px;
+      pointer-events: none;
+      alignment-baseline: middle;
+      dominant-baseline: middle;
+      white-space: pre;
+    }
+    .diagram-pointer {
+      stroke: var(--pointer-color);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      marker-end: url(#smallArrow);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    #charging-screen {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: var(--main-bg);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 99;
+      position: fixed;
+      left: 0; top: 0;
+    }
+    #charging-screen h1 {
+      font-size: 2.7rem;
+      color: #10243a;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      margin-top: 18vh;
+      text-align: center;
+    }/* You CSS goes in here */
