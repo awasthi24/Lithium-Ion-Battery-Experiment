@@ -1,502 +1,659 @@
-    :root {
-      --beaker-outline: #111;
-      --electrolyte: #b9e0fb;
-      --electrolyte-glow: 0 0 22px #90cdf4cc;
-      --separator: #444;
-      --separator-highlight: #7db6f0;
-      --separator-dot: #fff;
-      --anode-face: #b87333;
-      --anode-side: #8a5c2d;
-      --anode-top: #d5a06f;
-      --anode-highlight: #7db6f0;
-      --cathode-face: #258a5b;
-      --cathode-side: #15523a;
-      --cathode-top: #5ad4a0;
-      --cathode-highlight: #7db6f0;
-      --connector: #b87333;
-      --connector-highlight: #7db6f0;
-      --bulb-off: #ffe066;
-      --bulb-on: #ffeb60;
-      --bulb-outline: #e6c258;
-      --bulb-glow: #fff3;
-      --ghost: rgba(255,205,0,0.14);
-      --delft-blue: #1D3461;
-      --polynesian-blue: #1F487E;
-      --lapis-lazuli: #376996;
-      --silver-lake-blue: #6290C8;
-      --vista-blue: #829CBC;
-      --main-bg: var(--lapis-lazuli);
-      --panel-bg: var(--delft-blue);
-      --component-bg: var(--polynesian-blue);
-      --component-border: var(--silver-lake-blue);
-      --instruction-bg: #f5faff;
-      --instruction-border: var(--delft-blue);
-      --label-color: #fffbe5;
-      --heading-color: #fff;
-      --component-heading-color: #fff;
-      --pointer-color: #444;
-      --pointer-shadow: #fff;
-    }
-    html, body {
-      margin: 0; padding: 0;
-      width: 100vw; height: 100vh;
-      font-family: Arial, 'Segoe UI', Arial, sans-serif;
-      background: var(--main-bg);
-      overflow: hidden;
-    }
-    #app {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      width: 100vw;
-      background: var(--main-bg);
-    }
-    header {
-      height: 62px;
-      background: #101d36;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.35rem;
-      font-weight: 800;
-      font-family: Arial, sans-serif;
-      box-shadow: 0 3px 18px #101d3640;
-      letter-spacing: 1.8px;
-    }
-    #page-title {
-      font-size: 2.2rem;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      letter-spacing: 1.8px;
-      margin: 0;
-    }
-    main {
-      flex: 1 1 auto;
-      display: flex;
-      width: 100vw;
-      height: calc(100vh - 62px);
-      background: var(--main-bg);
-      font-family: Arial, sans-serif;
-    }
-    .left-panel {
-      width: 31vw;
-      min-width: 320px;
-      max-width: 440px;
-      background: var(--panel-bg);
-      border-right: 2px solid var(--component-border);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    #components-heading {
-      width: 100%;
-      font-size: 1.55rem;
-      font-family: Arial, sans-serif;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      color: #fff;
-      background: #17264a;
-      padding: 22px 0 12px 36px;
-      margin: 0;
-      border-bottom: 2px solid var(--component-border);
-      text-shadow: 0 1px 14px #0007;
-    }
-    .components-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: 16px 0 0 0;
-      align-items: flex-start;
-      min-height: 70vh;
-    }
-    .component-box {
-      background: var(--component-bg);
-      border-radius: 13px;
-      box-shadow: 0 2px 11px #0004;
-      padding: 10px 14px 10px 18px;
-      margin-bottom: 7px;
-      margin-right: 0;
-      margin-left: 22px;
-      width: 81%;
-      min-width: 180px;
-      max-width: 340px;
-      min-height: 61px;
-      border: 2.5px solid var(--component-border);
-      position: relative;
-      transition: box-shadow 0.18s, border-color 0.18s;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .component-box:hover, .component-box:focus-within {
-      border-color: var(--vista-blue);
-      box-shadow: 0 6px 24px #37699677;
-    }
-    .component-heading-label {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 3px;
-      min-width: 90px;
-      align-items: flex-start;
-    }
-    .component-heading {
-      font-weight: 800;
-      font-size: 1.21rem;
-      color: #fff !important;
-      font-family: Arial, sans-serif;
-      letter-spacing: 0.6px;
-      text-shadow: 0 1px 5px #0002;
-      line-height: 1.12;
-      margin-bottom: 0;
-    }
-    .component-label {
-      font-size: 1.01rem;
-      color: #111 !important;
-      font-family: Arial, sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      text-align: left;
-      text-shadow: 0 1px 2px #0001;
-      margin-top: 0;
-    }
-    .component-image-box {
-      background: var(--silver-lake-blue);
-      border-radius: 10px;
-      padding: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 10px;
-      box-shadow: 0 2px 8px #2222;
-      border: 2px solid var(--component-border);
-      min-width: 56px;
-      min-height: 56px;
-      max-width: 56px;
-      max-height: 56px;
-      position: relative;
-    }
-    .component-btn {
-      width: 50px; height: 50px;
-      background: transparent;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: grab;
-      outline: none;
-      position: relative;
-      z-index: 1;
-      padding: 0;
-      transition: transform 0.18s;
-    }
-    .component-btn:focus,
-    .component-btn:hover {
-      filter: drop-shadow(0 0 8px var(--vista-blue));
-      transform: scale(1.07);
-    }
-    .component-btn.dragging {
-      z-index: 10;
-      transform: scale(1.11) rotate(-6deg);
-    }
-    .component-img-wrapper:hover .popover,
-    .component-img-wrapper:focus-within .popover {
-      display: block;
-    }
-    .popover {
-      display: none;
-      position: absolute;
-      left: 56px;
-      top: 0px;
-      z-index: 2;
-      background: var(--silver-lake-blue);
-      border: 1.5px solid var(--delft-blue);
-      color: #222;
-      padding: 10px 15px;
-      border-radius: 9px;
-      width: 220px;
-      font-size: 0.99rem;
-      box-shadow: 0 4px 18px #1118;
-      text-align: left;
-      pointer-events: none;
-    }
-    .instructions-box {
-      background: var(--instruction-bg);
-      color: #1D3461;
-      border: 3.5px solid var(--instruction-border);
-      border-radius: 14px;
-      padding: 28px 39px 32px 32px;
-      font-size: 1.15rem;
-      font-family: Arial, sans-serif;
-      font-weight: 600;
-      margin: 36px 0 0 38px;
-      box-shadow: 0 2px 16px #10182822;
-      min-width: 390px;
-      max-width: 95vw;
-      min-height: 72px;
-      position: static;
-      transition: background 0.2s, border-color 0.2s;
-      margin-bottom: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-items: flex-start;
-    }
-    .instructions-title {
-      font-size: 1.13rem;
-      color: var(--delft-blue);
-      font-weight: 900;
-      letter-spacing: 1.1px;
-      margin-bottom: 3px;
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-    }
-   #tts-btn {
-        background: none !important;
-        border: none !important;
-        outline: none !important;
-        cursor: pointer;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        vertical-align: middle;
-    }
-    #tts-btn svg {
-        display: block;
-    }
-    #tts-btn:hover {
-      background: #1F487E;
-    }
-    .action-btns {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      gap: 24px;
-      justify-content: flex-end;
-      align-items: center;
-      margin: 0 0 10px 0;
-      /* align with instruction box */
-      padding-right: 38px;
-      box-sizing: border-box;
-      position: absolute;
-      top: 36px;
-      right: 0;
-      z-index: 11;
-    }
-    #switch-on-btn {
-      background: #20b455;
-      color: #fff;
-      font-size: 1.18rem;
-      font-weight: 800;
-      padding: 15px ;
-      border: none;
-      border-radius: 15px;
-      margin: 0;
-      cursor: pointer;
-      box-shadow: 0 2px 18px #3887fe30;
-      letter-spacing: 0.7px;
-      transition: background 0.18s;
-      align-self: center;
-      display: block;
-    }
-    #switch-on-btn:hover {
-      background: #187c37;
-    }
-    .right-panel {
-      width: 69vw;
-      min-width: 350px;
-      background: var(--main-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .beaker-section {
-      width: 100%;
-      height: 100%;
-      min-height: 520px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      position: relative;
-      margin-top: 0;
-    }
-    .beaker-outer {
-      width: 1000px;
-      height: 370px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 40px auto 0 auto;
-      user-select: none;
-      position: relative;
-      background: none;
-      top: 0;
-    }
-    #beaker-svg {
-      width: 980px;
-      height: 340px;
-      display: block;
-      background: none;
-      margin-left: 15px;
-      margin-right: 0;
-    }
-    #beaker-outline-rect {
-      stroke: var(--beaker-outline);
-      stroke-width: 8;
-      fill: none;
-    }
-    #electrolyte-liquid {
-      filter: blur(0.3px) drop-shadow(0 8px 14px #90cdf4bb);
-    }
-    #separator-highlight, #anode-highlight, #cathode-highlight {
-      display: none;
-      stroke: none;
-      fill: var(--separator-highlight);
-      opacity: 0.82;
-    }
-    #connector-highlight {
-      display: none;
-      stroke: var(--connector-highlight);
-      stroke-width: 12;
-      fill: none;
-      opacity: 0.95;
-    }
-    .svg-separator-dots {
-      pointer-events: none;
-    }
-    .svg-separator-dots circle {
-      fill: var(--separator-dot);
-      opacity: 0.92;
-    }
-    #svg-separator-strip {
-      fill: var(--separator);
-      opacity: 0.87;
-      stroke: #444;
-      stroke-width: 2.5;
-    }
-    .svg-anode-cuboid-face {
-      fill: var(--anode-face);
-      stroke: #a05a16;
-      stroke-width: 2.5;
-    }
-    .svg-anode-cuboid-side {
-      fill: var(--anode-side);
-      stroke: #6a4013;
-      stroke-width: 2.5;
-    }
-    .svg-anode-cuboid-top {
-      fill: var(--anode-top);
-      stroke: #c49055;
-      stroke-width: 2.5;
-    }
-    .svg-cathode-cuboid-face {
-      fill: var(--cathode-face);
-      stroke: #195d3d;
-      stroke-width: 2.5;
-    }
-    .svg-cathode-cuboid-side {
-      fill: var(--cathode-side);
-      stroke: #195d3d;
-      stroke-width: 2.5;
-    }
-    .svg-cathode-cuboid-top {
-      fill: var(--cathode-top);
-      stroke: #5ad4a0;
-      stroke-width: 2.5;
-    }
-    .svg-connector-wire {
-      stroke: var(--connector);
-      stroke-width: 8;
-      fill: none;
-      filter: drop-shadow(0 0 13px #fff3);
-    }
-    .svg-connector-wire-outline {
-      stroke: var(--connector-highlight);
-      stroke-width: 16;
-      fill: none;
-      opacity: 0.45;
-      filter: none;
-      pointer-events: none;
-      display: none;
-    }
-    .svg-bulb-outline {
-      stroke: var(--connector-highlight);
-      stroke-width: 9;
-      fill: none;
-      opacity: 0.95;
-      filter: none;
-      pointer-events: none;
-      display: none;
-    }
-    .svg-bulb {
-      fill: var(--bulb-off);
-      stroke: #ccad34;
-      stroke-width: 3;
-      opacity: 1;
-      filter: none;
-    }
-    .svg-bulb.on {
-      fill: var(--bulb-on);
-      filter: drop-shadow(0 0 32px #fff78a);
-      stroke: #e6c258;
-      opacity: 1;
-    }
-    .diagram-label-box {
-      fill: #fff;
-      stroke: #b3b3b3;
-      stroke-width: 1.3;
-      rx: 6;
-      opacity: 0.93;
-      filter: drop-shadow(0 2px 10px #0002);
-    }
-    .diagram-label {
-      font-family: Arial, sans-serif;
-      font-size: 1.01rem;
-      font-weight: 700;
-      fill: #222;
-      stroke: none;
-      paint-order: stroke fill;
-      letter-spacing: 0.1px;
-      pointer-events: none;
-      alignment-baseline: middle;
-      dominant-baseline: middle;
-      white-space: pre;
-    }
-    .diagram-pointer {
-      stroke: var(--pointer-color);
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      marker-end: url(#smallArrow);
-      opacity: 0.85;
-      pointer-events: none;
-    }
-    #charging-screen {
-      display: none;
-      width: 100vw;
-      height: 100vh;
-      background: var(--main-bg);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 99;
-      position: fixed;
-      left: 0; top: 0;
-    }
-    #charging-screen h1 {
-      font-size: 2.7rem;
-      color: #10243a;
-      font-weight: 900;
-      letter-spacing: 2.5px;
-      margin-top: 18vh;
-      text-align: center;
-    }/* You CSS goes in here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Battery Setup Section */
+        .battery-setup {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            height: 600px;
+        }
+
+        .components-panel {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .component-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .component-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .component-box.dragging {
+            cursor: grabbing;
+            opacity: 0.7;
+        }
+
+        .component-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .component-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .component-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .component-description {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .component-box:hover .tooltip {
+            opacity: 1;
+        }
+
+        .diagram-panel {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .instruction-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .battery-container {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .beaker {
+            width: 300px;
+            height: 350px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            border: 3px solid #333;
+            border-radius: 15px 15px 5px 5px;
+            position: relative;
+            box-shadow: 
+                inset 0 0 20px rgba(255, 255, 255, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .electrolyte {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, #4facfe, #00f2fe);
+            border-radius: 0 0 12px 12px;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .separator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 280px;
+            background: #555;
+            border-radius: 4px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            background-image: radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+
+        .anode {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            width: 120px;
+            height: 250px;
+            background: linear-gradient(45deg, #ff9a56, #ff6b35);
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cathode {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 120px;
+            height: 250px;
+            background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .connector {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .wire {
+            width: 200px;
+            height: 4px;
+            background: #8B4513;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .bulb {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #fffacd, #ffd700);
+            border: 2px solid #8B4513;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .bulb.glowing {
+            background: radial-gradient(circle, #ffff00, #ffd700);
+            box-shadow: 0 0 20px #ffff00;
+        }
+
+        .highlighted {
+            background: rgba(255, 255, 0, 0.3) !important;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .switch-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .switch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Charging and Discharging Sections */
+        .cycle-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .cycle-diagram, .cycle-graph {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        .cycle-beaker {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            border: 3px solid #333;
+            border-radius: 15px 15px 5px 5px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 
+                inset 0 0 20px rgba(255, 255, 255, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cycle-electrolyte {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, #4facfe, #00f2fe);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .cycle-separator {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 200px;
+            background: #555;
+            border-radius: 3px;
+            background-image: radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 6px 6px;
+        }
+
+        .cycle-anode {
+            position: absolute;
+            top: 25px;
+            left: 15px;
+            width: 70px;
+            height: 200px;
+            background: linear-gradient(45deg, #ff9a56, #ff6b35);
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cycle-cathode {
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            width: 70px;
+            height: 200px;
+            background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cycle-wire {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: #8B4513;
+            border-radius: 2px;
+        }
+
+        .cycle-bulb {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #fffacd, #ffd700);
+            border: 2px solid #8B4513;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .cycle-bulb.glowing {
+            background: radial-gradient(circle, #ffff00, #ffd700);
+            box-shadow: 0 0 15px #ffff00;
+        }
+
+        .dc-source {
+            position: absolute;
+            top: -35px;
+            right: 80px;
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.7em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .graph-canvas {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .slider-container {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .slider-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .stop-btn {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(45deg, #ff9800, #f57c00);
+            color: white;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .output-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .output-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .output-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+
+        .error-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .error-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            text-align: center;
+        }
+
+        .error-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .error-close:hover {
+            color: #333;
+        }
+
+        .error-title {
+            color: #f44336;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .lithium-ion {
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #9c27b0, #673ab7);
+            box-shadow: 0 0 5px #9c27b0;
+        }
+
+        .electron {
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #f44336, #d32f2f);
+            box-shadow: 0 0 5px #f44336;
+        }
+
+        .labels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .labels.visible {
+            opacity: 1;
+        }
+
+        .label {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .label-electrolyte {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .label-separator {
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .label-anode {
+            top: 170px;
+            left: 40px;
+        }
+
+        .label-cathode {
+            top: 170px;
+            right: 40px;
+        }
+
+        .label-connector {
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 1200px) {
+            .battery-setup {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .cycle-section {
+                grid-template-columns: 1fr;
+            }
+        }
