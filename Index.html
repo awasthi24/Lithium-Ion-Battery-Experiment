@@ -1,203 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lithium-ion Battery Setup</title>
-  <meta name="viewport" content="width=1200, initial-scale=1.0">
-  <link link rel="stylesheet" href="experiment/simulation/css/main.css"\link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-ion Battery Virtual Lab Simulation</title>
+    <link link rel="stylesheet" href="claudestyle.css"\link>
 </head>
 <body>
-  <div id="app">
-    <header>
-      <h1 id="page-title">Lithium-ion Battery Setup</h1>
-    </header>
-    <main>
-      <section class="left-panel">
-        <div id="components-heading">Components</div>
-        <div class="components-list">
-          <!-- Electrolyte -->
-          <div class="component-box" id="electrolyte-box">
-            <div class="component-heading-label">
-              <div class="component-heading">Electrolyte</div>
-              <div class="component-label">LiPF₆</div>
-            </div>
-            <div class="component-image-box">
-              <div class="component-img-wrapper">
-                <button class="component-btn" draggable="true" data-component="electrolyte" aria-label="Electrolyte: LiPF6" id="electrolyte-btn">
-                  <svg width="40" height="40" viewBox="0 0 62 62">
-                    <ellipse cx="31" cy="31" rx="18" ry="12" fill="#b9e0fb" opacity="0.8" />
-                  </svg>
-                </button>
-                <div class="popover" id="electrolyte-popover">
-                  Lithium hexafluorophosphate- Non aqueous organic solvent that allows lithium ions to travel between electrodes
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Separator -->
-          <div class="component-box" id="separator-box">
-            <div class="component-heading-label">
-              <div class="component-heading">Separator</div>
-              <div class="component-label">PE</div>
-            </div>
-            <div class="component-image-box">
-              <div class="component-img-wrapper" data-tooltip="Microporous polyethylene">
-                <button class="component-btn" draggable="true"
-                        data-component="separator" aria-label="Separator: PE" id="separator-btn">
-                  <svg width="40" height="40" viewBox="0 0 40 40">
-                    <rect x="15" y="5" width="10" height="30" fill="#444" rx="2.5"/>
-                    <g class="svg-separator-dots">
-                      <circle cx="20" cy="10" r="1.6"/>
-                      <circle cx="22" cy="13" r="1.3"/>
-                      <circle cx="18" cy="16" r="1.4"/>
-                      <circle cx="21" cy="19" r="1.5"/>
-                      <circle cx="19" cy="22" r="1.2"/>
-                      <circle cx="22" cy="25" r="1.4"/>
-                      <circle cx="18" cy="28" r="1.3"/>
-                      <circle cx="20" cy="32" r="1.2"/>
-                    </g>
-                  </svg>
-                </button>
-                <div class="popover">Microporous polyethylene - Allows Li+ ions to pass but prevent short circuit</div>
-              </div>
-            </div>
-          </div>
-          <!-- Anode -->
-          <div class="component-box" id="anode-box">
-            <div class="component-heading-label">
-              <div class="component-heading">Anode</div>
-              <div class="component-label">Graphite</div>
-            </div>
-            <div class="component-image-box">
-              <div class="component-img-wrapper" data-tooltip="Graphite- Stores Li+ ions during charging">
-                <button class="component-btn" draggable="true"
-                        data-component="anode" aria-label="Anode: Graphite" id="anode-btn">
-                  <svg width="40" height="40" viewBox="0 0 40 40">
-                    <rect x="9" y="5" width="20" height="30" fill="#c87d2e"/>
-                    <rect x="12" y="12" width="14" height="2" fill="#fff6" rx="1"/>
-                    <rect x="12" y="18" width="14" height="2" fill="#fff6" rx="1"/>
-                    <rect x="12" y="24" width="14" height="2" fill="#fff6" rx="1"/>
-                  </svg>
-                </button>
-                <div class="popover" id="anode-popover">
-                  Graphite- Stores Li+ ions during charging
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Cathode -->
-          <div class="component-box" id="cathode-box">
-            <div class="component-heading-label">
-              <div class="component-heading">Cathode</div>
-              <div class="component-label">LiCoO₂</div>
-            </div>
-            <div class="component-image-box">
-              <div class="component-img-wrapper" data-tooltip="Lithium Cobalt Oxide have good capacity">
-                <button class="component-btn" draggable="true"
-                        data-component="cathode" aria-label="Cathode: LiCoO2" id="cathode-btn">
-                  <svg width="40" height="40" viewBox="0 0 40 40">
-                    <rect x="9" y="5" width="20" height="30" fill="#258a5b"/>
-                    <circle cx="30" cy="12" r="2" fill="#ffe066" opacity="0.8"/>
-                  </svg>
-                </button>
-                <div class="popover" id="cathode-popover">
-                  Lithium Cobalt Oxide have good capacity
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Connector -->
-          <div class="component-box" id="connector-box">
-            <div class="component-heading-label">
-              <div class="component-heading">Connector</div>
-              <div class="component-label">Wires & Load</div>
-            </div>
-            <div class="component-image-box">
-              <div class="component-img-wrapper" data-tooltip="Copper wires and load to complete circuit">
-                <button class="component-btn" draggable="true"
-                        data-component="connector" aria-label="Connector: Wires & Load" id="connector-btn">
-                  <svg width="40" height="40" viewBox="0 0 40 40">
-                    <polyline points="6,20 20,7 34,20" fill="none" stroke="#b87333" stroke-width="3"/>
-                    <circle cx="20" cy="7" r="5" fill="#ffe066" stroke="#ccc" stroke-width="2"/>
-                    <rect x="17" y="12" width="6" height="2" rx="1" fill="#aaa"/>
-                  </svg>
-                </button>
-                <div class="popover" id="connector-popover">
-                  Copper wires and load to complete circuit
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+        <div class="header">
+            Li-ion Battery Virtual Lab Simulation
         </div>
-      </section>
-      <section class="right-panel">
-        <div class="instructions-box" id="instructions-box">
-          <div class="instructions-title">Instructions</div>
-          <span id="instructions">Select and drag electrolyte in the beaker.</span>
-          <button id="tts-btn"> </button>
+
+        <!-- Battery Setup Section -->
+        <div class="section">
+            <div class="section-title">1. Li-ion Battery Setup</div>
+            <div class="battery-setup">
+                <div class="components-panel">
+                    <div class="component-box" draggable="true" data-component="electrolyte">
+                        <div class="tooltip">Non-aqueous organic solvent that allows lithium ions to travel between the electrodes</div>
+                        <div class="component-header">
+                            <svg class="component-icon" viewBox="0 0 24 24" fill="#4facfe">
+                                <circle cx="12" cy="12" r="8" stroke="#4facfe" stroke-width="2" fill="rgba(79, 172, 254, 0.3)"/>
+                                <circle cx="8" cy="10" r="1.5" fill="#4facfe"/>
+                                <circle cx="16" cy="10" r="1.5" fill="#4facfe"/>
+                                <circle cx="12" cy="14" r="1.5" fill="#4facfe"/>
+                            </svg>
+                            <div class="component-title">Electrolyte</div>
+                        </div>
+                        <div class="component-description">Lithium hexafluorophosphate</div>
+                    </div>
+
+                    <div class="component-box" draggable="true" data-component="separator">
+                        <div class="tooltip">Separator Prevents short circuit</div>
+                        <div class="component-header">
+                            <svg class="component-icon" viewBox="0 0 24 24" fill="#666">
+                                <rect x="10" y="4" width="4" height="16" rx="2" fill="#666"/>
+                                <circle cx="7" cy="8" r="1" fill="white"/>
+                                <circle cx="17" cy="8" r="1" fill="white"/>
+                                <circle cx="7" cy="12" r="1" fill="white"/>
+                                <circle cx="17" cy="12" r="1" fill="white"/>
+                                <circle cx="7" cy="16" r="1" fill="white"/>
+                                <circle cx="17" cy="16" r="1" fill="white"/>
+                            </svg>
+                            <div class="component-title">Separator</div>
+                        </div>
+                        <div class="component-description">Microporous polyethylene</div>
+                    </div>
+
+                    <div class="component-box" draggable="true" data-component="anode">
+                        <div class="tooltip">Graphite stores Li+ ions during charging</div>
+                        <div class="component-header">
+                            <svg class="component-icon" viewBox="0 0 24 24" fill="#ff9a56">
+                                <rect x="6" y="4" width="12" height="16" rx="2" fill="#ff9a56"/>
+                                <line x1="9" y1="8" x2="15" y2="8" stroke="white" stroke-width="2"/>
+                                <line x1="9" y1="12" x2="15" y2="12" stroke="white" stroke-width="2"/>
+                                <line x1="9" y1="16" x2="15" y2="16" stroke="white" stroke-width="2"/>
+                                <text x="12" y="6" text-anchor="middle" fill="white" font-size="8">-</text>
+                            </svg>
+                            <div class="component-title">Anode</div>
+                        </div>
+                        <div class="component-description">Graphite</div>
+                    </div>
+
+                    <div class="component-box" draggable="true" data-component="cathode">
+                        <div class="tooltip">Lithium cobalt oxide has good capacity</div>
+                        <div class="component-header">
+                            <svg class="component-icon" viewBox="0 0 24 24" fill="#56ab2f">
+                                <rect x="6" y="4" width="12" height="16" rx="2" fill="#56ab2f"/>
+                                <line x1="9" y1="8" x2="15" y2="8" stroke="white" stroke-width="2"/>
+                                <line x1="12" y1="5" x2="12" y2="11" stroke="white" stroke-width="2"/>
+                                <line x1="9" y1="12" x2="15" y2="12" stroke="white" stroke-width="2"/>
+                                <line x1="12" y1="9" x2="12" y2="15" stroke="white" stroke-width="2"/>
+                                <line x1="9" y1="16" x2="15" y2="16" stroke="white" stroke-width="2"/>
+                                <line x1="12" y1="13" x2="12" y2="19" stroke="white" stroke-width="2"/>
+                                <text x="12" y="6" text-anchor="middle" fill="white" font-size="8">+</text>
+                            </svg>
+                            <div class="component-title">Cathode</div>
+                        </div>
+                        <div class="component-description">Lithium cobalt oxide</div>
+                    </div>
+
+                    <div class="component-box" draggable="true" data-component="connector">
+                        <div class="tooltip">Connector completes the circuit</div>
+                        <div class="component-header">
+                            <svg class="component-icon" viewBox="0 0 24 24" fill="#8B4513">
+                                <path d="M4 12h16M12 4v16" stroke="#8B4513" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" fill="#ffd700" stroke="#8B4513" stroke-width="2"/>
+                                <path d="M8 8l8 8M16 8l-8 8" stroke="#8B4513" stroke-width="1"/>
+                            </svg>
+                            <div class="component-title">Connector</div>
+                        </div>
+                        <div class="component-description">Connecting wire with bulb</div>
+                    </div>
+                </div>
+
+                <div class="diagram-panel">
+                    <div class="instruction-box" id="instruction">
+                        Add electrolyte to beaker
+                    </div>
+                    <div class="battery-container">
+                        <div class="beaker" id="beaker">
+                            <div class="electrolyte" id="electrolyte"></div>
+                            <div class="separator" id="separator"></div>
+                            <div class="anode" id="anode"></div>
+                            <div class="cathode" id="cathode"></div>
+                            <div class="connector" id="connector">
+                                <div class="wire"></div>
+                                <div class="bulb" id="bulb"></div>
+                            </div>
+                            <div class="labels" id="labels">
+                                <div class="label label-electrolyte">Electrolyte</div>
+                                <div class="label label-separator">Separator</div>
+                                <div class="label label-anode">Anode (-)</div>
+                                <div class="label label-cathode">Cathode (+)</div>
+                                <div class="label label-connector">Connector</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="action-btns">
-          <button id="switch-on-btn" style="display:none;">Switch on</button>
+
+        <!-- Charging Cycle Section -->
+        <div class="section">
+            <div class="section-title">2. Charging Cycle</div>
+            <div class="cycle-section">
+                <div class="cycle-diagram">
+                    <div class="cycle-beaker" id="charging-beaker">
+                        <div class="cycle-electrolyte"></div>
+                        <div class="cycle-separator"></div>
+                        <div class="cycle-anode"></div>
+                        <div class="cycle-cathode"></div>
+                        <div class="cycle-wire"></div>
+                        <div class="dc-source">DC</div>
+                    </div>
+                </div>
+                <div class="cycle-graph">
+                    <canvas class="graph-canvas" id="charging-graph"></canvas>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="slider-container">
+                    <div class="slider-label">External Source Voltage: <span id="voltage-value">3.7V</span></div>
+                    <input type="range" class="slider" id="voltage-slider" min="3.0" max="5.0" step="0.1" value="3.7">
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">C-Rate: <span id="c-rate-value">1.0C</span></div>
+                    <input type="range" class="slider" id="c-rate-slider" min="0.01" max="2.0" step="0.01" value="0.2">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="control-btn start-btn" id="charging-start">Start</button>
+                <button class="control-btn stop-btn" id="charging-stop">Stop</button>
+                <button class="control-btn reset-btn" id="charging-reset">Reset</button>
+            </div>
+            <div class="output-box">
+                <div class="output-title">Charging Output</div>
+                <div class="output-item">
+                    <span>External Source Voltage:</span>
+                    <span id="charging-ext-voltage">3.7V</span>
+                </div>
+                <div class="output-item">
+                    <span>Battery Voltage:</span>
+                    <span id="charging-battery-voltage">0.0V</span>
+                </div>
+                <div class="output-item">
+                    <span>Battery Charge:</span>
+                    <span id="charging-battery-charge">0%</span>
+                </div>
+            </div>
         </div>
-        <div class="beaker-section">
-          <div class="beaker-outer">
-            <svg id="beaker-svg" viewBox="0 0 980 340">
-              <defs>
-                <linearGradient id="liquidFade" x1="0" x2="0" y1="60" y2="280" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#b9e0fb" stop-opacity="0.98"/>
-                  <stop offset="90%" stop-color="#b9e0fb" stop-opacity="0.70"/>
-                  <stop offset="100%" stop-color="#b9e0fb" stop-opacity="0.34"/>
-                </linearGradient>
-                <marker id="arrowhead" markerWidth="12" markerHeight="9"
-                        refX="8" refY="4.5" orient="auto"
-                        markerUnits="strokeWidth">
-                  <polygon points="0 0, 12 4.5, 0 9" fill="#111"/>
-                </marker>
-                <marker id="smallArrow" markerWidth="7" markerHeight="6"
-                        refX="5" refY="3" orient="auto"
-                        markerUnits="strokeWidth">
-                  <polygon points="0 0, 7 3, 0 6" fill="#444"/>
-                </marker>
-              </defs>
-              <rect id="electrolyte-liquid" x="48" y="255" width="876" height="0"
-                rx="0"
-                fill="url(#liquidFade)" stroke="none" style="filter: var(--electrolyte-glow); display:none;"/>
-              <polyline id="beaker-outline-rect"
-                points="48,50 48,255 924,255 924,50"
-                />
-              <!-- Separator highlight strip (center) -->
-              <rect id="separator-highlight" x="480" y="85" width="24" height="170" rx="6"/>
-              <!-- Anode highlight strip (left) -->
-              <rect id="anode-highlight" x="120" y="85" width="48" height="170"/>
-              <!-- Cathode highlight strip (right, aligned with wire at x=812) -->
-              <rect id="cathode-highlight" x="812" y="85" width="48" height="170"/>
-              <!-- Connector wire/bulb highlight -->
-              <polyline id="connector-highlight" class="svg-connector-wire-outline"
-                points="164,85 164,38 490,38 812,38 812,85"/>
-              <ellipse id="bulb-highlight" class="svg-bulb-outline" cx="490" cy="38" rx="27" ry="20"/>
-              <!-- The separator will be drawn here -->
-              <g id="separator-group"></g>
-              <!-- The anode will be drawn here -->
-              <g id="anode-group"></g>
-              <!-- The cathode will be drawn here -->
-              <g id="cathode-group"></g>
-              <!-- The connector will be drawn here -->
-              <g id="connectorGroup"></g>
-              <!-- Placed electrodes -->
-              <g id="electrodes"></g>
-              <g id="li-ions"></g>
-              <!-- Diagram labels and pointers -->
-              <g id="diagram-labels"></g>
-              <g id="labels-group"></g>
-            </svg>
-          </div>
+
+        <!-- Discharging Cycle Section -->
+        <div class="section">
+            <div class="section-title">3. Discharging Cycle</div>
+            <div class="cycle-section">
+                <div class="cycle-diagram">
+                    <div class="cycle-beaker" id="discharging-beaker">
+                        <div class="cycle-electrolyte"></div>
+                        <div class="cycle-separator"></div>
+                        <div class="cycle-anode"></div>
+                        <div class="cycle-cathode"></div>
+                        <div class="cycle-wire"></div>
+                        <div class="cycle-bulb" id="discharge-bulb"></div>
+                    </div>
+                </div>
+                <div class="cycle-graph">
+                    <canvas class="graph-canvas" id="discharging-graph"></canvas>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="slider-container">
+                    <div class="slider-label">Resistance: <span id="resistance-value">50Ω</span></div>
+                    <input type="range" class="slider" id="resistance-slider" min="10" max="100" step="1" value="50">
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">C-Rate: <span id="discharge-c-rate-value">1.0C</span></div>
+                    <input type="range" class="slider" id="discharge-c-rate-slider" min="0.01" max="2.0" step="0.01" value="1.0">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="control-btn start-btn" id="discharging-start">Start</button>
+                <button class="control-btn stop-btn" id="discharging-stop">Stop</button>
+                <button class="control-btn reset-btn" id="discharging-reset">Reset</button>
+            </div>
+            <div class="output-box">
+                <div class="output-title">Discharging Output</div>
+                <div class="output-item">
+                    <span>Resistance:</span>
+                    <span id="discharging-resistance">50Ω</span>
+                </div>
+                <div class="output-item">
+                    <span>Battery Voltage:</span>
+                    <span id="discharging-battery-voltage">4.2V</span>
+                </div>
+                <div class="output-item">
+                    <span>Battery Charge:</span>
+                    <span id="discharging-battery-charge">100%</span>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
-    <div id="charging-screen">
-      <h1>Charging/Discharging Cycle Simulation</h1>
+
+        <!-- Error Overlay -->
+        <div class="error-overlay" id="error-overlay">
+            <div class="error-box">
+                <button class="error-close" id="error-close">&times;</button>
+                <div class="error-title">CAUTION!</div>
+                <div class="error-message" id="error-message"></div>
+            </div>
+        </div>
     </div>
-  </div>
-<script src = "experiment/simulation/js/main.js" ></script>
+
+<script src = "claudescript.js" ></script>
 </body>
 </html>
