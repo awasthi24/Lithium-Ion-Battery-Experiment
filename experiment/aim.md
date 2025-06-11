@@ -1,1 +1,1 @@
-### Aim of the experiment
+To simulate the charging and discharging behavior of a lithium-ion battery, analyze the effects of key parameters on battery performance, and enhance understanding of electrochemical processes through virtual experimentation
