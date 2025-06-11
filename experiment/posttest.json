@@ -2,124 +2,115 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "",
+      "question": "What happens to the voltage of a lithium-ion cell as it discharges?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "It increases steadily",
+        "b": "It remains constant",
+        "c": "It decreases gradually",
+        "d": "It decreases gradually"
       },
-      "correctAnswer": "",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which parameter did you observe had the greatest effect on battery performance during the simulation?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Color of the battery",
+        "b": "Temperature",
+        "c": "Label on the battery",
+        "d": "Time of day"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "During charging, lithium ions move from:",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Cathode to anode",
+        "b": "Anode to cathode",
+        "c": "Separator to electrolyte",
+        "d": "Electrolyte to separator"
       },
-      "correctAnswer": "",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "What is the purpose of monitoring the state of charge in the experiment?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "To measure battery color",
+        "b": "To track how much energy is stored",
+        "c": "To increase battery size",
+        "d": "To cool the battery"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "If the external load resistance is increased, what happens to the discharge current?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "It increases",
+        "b": "It decreases",
+        "c": "It stays the same",
+        "d": "It becomes zero"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which safety precaution is most important when handling real lithium-ion batteries?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Overcharging them",
+        "b": "Short-circuiting the terminals",
+        "c": "Avoiding physical damage",
+        "d": "Placing them in water"
       },
-      "correctAnswer": "",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },'{
-      "question": "",
+      "question": "What was the effect of higher temperature on battery performance in your simulation?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "No effect",
+        "b": "Improved performance up to a limit",
+        "c": "Always reduced performance",
+        "d": "Made the battery explode"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Why is it important to avoid over-discharging a lithium-ion battery?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "It increases capacity",
+        "b": "It can damage the battery",
+        "c": "It makes the battery lighter",
+        "d": "It changes the color"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which graph did you use to analyze the battery’s performance during the experiment?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Voltage vs. time",
+        "b": "Mass vs. volume",
+        "c": "Temperature vs. pressure",
+        "d": "Color vs. brightness"
       },
-      "correctAnswer": "",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "After the experiment, what conclusion can you draw about the relationship between current and battery life?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Higher current increases battery life",
+        "b": "Higher current decreases battery life",
+        "c": "Current has no effect",
+        "d": "Battery life is infinite"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
-    {
-      "question": "",
-      "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
-      },
-      "correctAnswer": "",
-      "difficulty": "beginner"
+    
     },
   ]    
 }    
