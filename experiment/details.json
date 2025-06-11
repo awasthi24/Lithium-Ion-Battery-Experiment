@@ -1,0 +1,46 @@
+{
+
+   "details": [
+       {
+			"Experiment": "Lithium Ion Battery Simulator",     
+			"Lab": "Engineering Chemistry Lab",               
+			"Discipline": "Engineering Chemistry",				 
+			"Technology": "HTML CSS Javascript"         
+       }
+   ],
+
+   "developer": [
+       {       
+      "Developer": "Dr. Ravish Rajput",         
+      "Institute": "REC Kannauj",         
+      "InstituteAcronym": "RECK"   
+       }
+   ],
+
+   "contributer": [
+       {       
+			"Contributer": "Abhishek Awasthi",             
+      "Institute": "REC Kannauj",               
+			"InstituteAcronym": "RECK"         
+       },
+
+       {       
+			"Contributer": "Kirtibardhan Singh",              
+      "Institute": "REC Kannauj",               
+			"InstituteAcronym": "RECK"         
+       },
+
+       {       
+			"Contributer": "Medha Saxena",             
+      "Institute": "REC Kannauj",               
+			"InstituteAcronym": "RECK"         
+       },
+
+       {       
+			"Contributer": "Vipin Kumar",              
+      "Institute": "REC Kannauj",               
+			"InstituteAcronym": "RECK"         
+       }
+   ]
+
+}
