@@ -2,124 +2,114 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "",
+      "question": "Which material is commonly used as the anode in a lithium-ion battery?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Zinc",
+        "b": "Graphite",
+        "c": "Lead",
+        "d": "Nickel"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "What is the main function of the separator in a lithium-ion battery?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Conduct electricity",
+        "b": "Store energy",
+        "c": "Prevent direct contact between electrodes",
+        "d": "Provide mechanical strength"
       },
-      "correctAnswer": "",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which of the following is the electrolyte in most lithium-ion batteries?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Sulfuric acid",
+        "b": "Potassium hydroxide",
+        "c": "Lithium salt in organic solvent",
+        "d": "Water"
       },
-      "correctAnswer": "",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "During discharge, lithium ions move from:",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Cathode to anode",
+        "b": "Anode to cathode",
+        "c": "Separator to electrolyte",
+        "d": "Electrolyte to separator"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which of these is NOT a rechargeable battery?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Lithium-ion",
+        "b": "Lead-acid",
+        "c": "Nickel-cadmium",
+        "d": "Alkaline"
       },
-      "correctAnswer": "",
+      "correctAnswer": "d",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "The positive terminal of a lithium-ion battery is called:",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Anode",
+        "b": "Cathode",
+        "c": "Electrolyte",
+        "d": "Separator"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },'{
-      "question": "",
+      "question": "What is the typical voltage of a single lithium-ion cell?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "1.2 V",
+        "b": "1.5 V",
+        "c": "3.7 V",
+        "d": "6 V"
       },
-      "correctAnswer": "",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which statement is true about the movement of electrons in a lithium-ion battery during discharge?
+",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Electrons move from anode to cathode through external circuit",
+        "b": "Electrons move from cathode to anode through external circuit",
+        "c": "Electrons do not move",
+        "d": "Electrons move through the electrolyte"
       },
-      "correctAnswer": "",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Lithium-ion batteries are called ‘secondary batteries’ because:",
+     
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "They are used as backup",
+        "b": "They can be recharged",
+        "c": "They are smaller in size",
+        "d": "They are less powerful"
       },
-      "correctAnswer": "",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "",
+      "question": "Which of the following is an application of lithium-ion batteries?",
       "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Car batteries",
+        "b": "Mobile phones",
+        "c": "Remote controls",
+        "d": "All of the above"
       },
-      "correctAnswer": "",
+      "correctAnswer": "d",
       "difficulty": "beginner"
     },
-    {
-      "question": "",
-      "answers": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
-      },
-      "correctAnswer": "",
-      "difficulty": "beginner"
-    },
-  ]    
-}    
+    
