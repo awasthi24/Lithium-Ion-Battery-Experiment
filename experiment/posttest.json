@@ -66,7 +66,8 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    },'{
+    },
+    {
       "question": "What was the effect of higher temperature on battery performance in your simulation?",
       "answers": {
         "a": "No effect",
