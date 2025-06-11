@@ -1,1 +1,1 @@
-## Experiment name
+Lithium Ion Battery Simulation
