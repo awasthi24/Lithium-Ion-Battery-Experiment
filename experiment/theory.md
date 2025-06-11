@@ -1,1 +1,1 @@
-### Link your theory in here
+A lithium-ion battery is a rechargeable battery that works by moving lithium ions between the anode (usually graphite) and cathode (typically a lithium metal oxide) through an electrolyte. During discharge, lithium ions flow from anode to cathode, generating electrical energy; during charging, the process reverses. This reversible movement enables high energy density, rechargeability, and efficient power delivery for devices
