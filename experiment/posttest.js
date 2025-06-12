@@ -29,7 +29,7 @@
       // add this question and its answers to the output
       output.push(
         `<div class=question> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
+        <div class=answers> ${answers.join("")} </div>`
       );
     });
 
@@ -48,7 +48,7 @@
     myQuestions.forEach((currentQuestion, questionNumber) => {
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
-      const selector = input[name=question${questionNumber}]:checked;
+      const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       // if answer is correct
@@ -66,7 +66,7 @@
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = ${numCorrect} out of ${myQuestions.length};
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
   const quizContainer = document.getElementById("quiz");
@@ -79,7 +79,19 @@
 /////////////////////// Do not modify the above code ////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////// Write the MCQ below in the exactly same described format ///////////////
+
+
 const myQuestions = [
+  {
+  
+  questions: [
     {
       question: "What happens to the voltage of a lithium-ion cell as it discharges?",
       answers: {
@@ -189,7 +201,10 @@ const myQuestions = [
       },
       correctAnswer: "b",
       difficulty: "beginner"
-    }
+     }
+  ]
+}
+
 
 
 
