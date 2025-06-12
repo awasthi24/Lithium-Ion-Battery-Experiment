@@ -48,7 +48,7 @@
     myQuestions.forEach((currentQuestion, questionNumber) => {
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
-      const selector = input[name=question${questionNumber}]:checked;
+      const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       // if answer is correct
@@ -66,7 +66,7 @@
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = ${numCorrect} out of ${myQuestions.length};
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
   const quizContainer = document.getElementById("quiz");
@@ -79,7 +79,19 @@
 /////////////////////// Do not modify the above code ////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-const myQuestions = [
+
+
+
+
+
+
+/////////////// Write the MCQ below in the exactly same described format ///////////////
+
+
+  const myQuestions = [
+  {
+  
+  questions: [
     {
       question: "Which material is commonly used as the anode in a lithium-ion battery?",
       answers: {
@@ -190,7 +202,10 @@ const myQuestions = [
       },
       correctAnswer: "d",
       difficulty: "beginner"
-    }
+     }
+  ]
+}
+
 
 
 
