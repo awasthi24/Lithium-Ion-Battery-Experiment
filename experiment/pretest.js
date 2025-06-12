@@ -88,7 +88,7 @@ const myQuestions = [
         c: "Lead",
         d: "Nickel"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -99,7 +99,7 @@ const myQuestions = [
         c: "Prevent direct contact between electrodes",
         d: "Provide mechanical strength"
       },
-      correctAnswer: c,
+      correctAnswer: "c",
       difficulty: "beginner"
     },
     {
@@ -110,7 +110,7 @@ const myQuestions = [
         c: "Lithium salt in organic solvent",
         d: "Water"
       },
-      correctAnswer: c,
+      correctAnswer: "c",
       difficulty: "beginner"
     },
     {
@@ -121,7 +121,7 @@ const myQuestions = [
         c: "Separator to electrolyte",
         d: "Electrolyte to separator"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -132,7 +132,7 @@ const myQuestions = [
         c: "Nickel-cadmium",
         d: "Alkaline"
       },
-      correctAnswer: d,
+      correctAnswer: "d",
       difficulty: "beginner"
     },
     {
@@ -143,7 +143,7 @@ const myQuestions = [
         c: "Electrolyte",
         d: "Separator"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -154,7 +154,7 @@ const myQuestions = [
         c: "3.7 V",
         d: "6 V"
       },
-      correctAnswer: c,
+      correctAnswer: "c",
       difficulty: "beginner"
     },
     {
@@ -165,7 +165,7 @@ const myQuestions = [
         c: "Electrons do not move",
         d: "Electrons move through the electrolyte"
       },
-      correctAnswer: a,
+      correctAnswer: "a",
       difficulty: "beginner"
     },
     {
@@ -177,7 +177,7 @@ const myQuestions = [
         c: "They are smaller in size",
         d: "They are less powerful"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -188,7 +188,7 @@ const myQuestions = [
         c: "Remote controls",
         d: "All of the above"
       },
-      correctAnswer: d,
+      correctAnswer: "d",
       difficulty: "beginner"
     }
 
