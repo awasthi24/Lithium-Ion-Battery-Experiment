@@ -81,116 +81,116 @@
 /////////////////////////////////////////////////////////////////////////////
 const myQuestions = [
     {
-      "question": "What happens to the voltage of a lithium-ion cell as it discharges?",
+      "question": "Which material is commonly used as the anode in a lithium-ion battery?",
       "answers": {
-        "a": "It increases steadily",
-        "b": "It remains constant",
-        "c": "It decreases gradually",
-        "d": "It decreases gradually"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which parameter did you observe had the greatest effect on battery performance during the simulation?",
-      "answers": {
-        "a": "Color of the battery",
-        "b": "Temperature",
-        "c": "Label on the battery",
-        "d": "Time of day"
+        "a": "Zinc",
+        "b": "Graphite",
+        "c": "Lead",
+        "d": "Nickel"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "During charging, lithium ions move from:",
+      "question": "What is the main function of the separator in a lithium-ion battery?",
+      "answers": {
+        "a": "Conduct electricity",
+        "b": "Store energy",
+        "c": "Prevent direct contact between electrodes",
+        "d": "Provide mechanical strength"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is the electrolyte in most lithium-ion batteries?",
+      "answers": {
+        "a": "Sulfuric acid",
+        "b": "Potassium hydroxide",
+        "c": "Lithium salt in organic solvent",
+        "d": "Water"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "During discharge, lithium ions move from:",
       "answers": {
         "a": "Cathode to anode",
         "b": "Anode to cathode",
         "c": "Separator to electrolyte",
         "d": "Electrolyte to separator"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "What is the purpose of monitoring the state of charge in the experiment?",
+      "question": "Which of these is NOT a rechargeable battery?",
       "answers": {
-        "a": "To measure battery color",
-        "b": "To track how much energy is stored",
-        "c": "To increase battery size",
-        "d": "To cool the battery"
+        "a": "Lithium-ion",
+        "b": "Lead-acid",
+        "c": "Nickel-cadmium",
+        "d": "Alkaline"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The positive terminal of a lithium-ion battery is called:",
+      "answers": {
+        "a": "Anode",
+        "b": "Cathode",
+        "c": "Electrolyte",
+        "d": "Separator"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "If the external load resistance is increased, what happens to the discharge current?",
+      "question": "What is the typical voltage of a single lithium-ion cell?",
       "answers": {
-        "a": "It increases",
-        "b": "It decreases",
-        "c": "It stays the same",
-        "d": "It becomes zero"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which safety precaution is most important when handling real lithium-ion batteries?",
-      "answers": {
-        "a": "Overcharging them",
-        "b": "Short-circuiting the terminals",
-        "c": "Avoiding physical damage",
-        "d": "Placing them in water"
+        "a": "1.2 V",
+        "b": "1.5 V",
+        "c": "3.7 V",
+        "d": "6 V"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "What was the effect of higher temperature on battery performance in your simulation?",
+      "question": "Which statement is true about the movement of electrons in a lithium-ion battery during discharge?",
       "answers": {
-        "a": "No effect",
-        "b": "Improved performance up to a limit",
-        "c": "Always reduced performance",
-        "d": "Made the battery explode"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Why is it important to avoid over-discharging a lithium-ion battery?",
-      "answers": {
-        "a": "It increases capacity",
-        "b": "It can damage the battery",
-        "c": "It makes the battery lighter",
-        "d": "It changes the color"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which graph did you use to analyze the battery’s performance during the experiment?",
-      "answers": {
-        "a": "Voltage vs. time",
-        "b": "Mass vs. volume",
-        "c": "Temperature vs. pressure",
-        "d": "Color vs. brightness"
+        "a": "Electrons move from anode to cathode through external circuit",
+        "b": "Electrons move from cathode to anode through external circuit",
+        "c": "Electrons do not move",
+        "d": "Electrons move through the electrolyte"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "After the experiment, what conclusion can you draw about the relationship between current and battery life?",
+      "question": "Lithium-ion batteries are called ‘secondary batteries’ because:",
+     
       "answers": {
-        "a": "Higher current increases battery life",
-        "b": "Higher current decreases battery life",
-        "c": "Current has no effect",
-        "d": "Battery life is infinite"
+        "a": "They are used as backup",
+        "b": "They can be recharged",
+        "c": "They are smaller in size",
+        "d": "They are less powerful"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
-    }
-
+    },
+    {
+      "question": "Which of the following is an application of lithium-ion batteries?",
+      "answers": {
+        "a": "Car batteries",
+        "b": "Mobile phones",
+        "c": "Remote controls",
+        "d": "All of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }v
 
 
 
