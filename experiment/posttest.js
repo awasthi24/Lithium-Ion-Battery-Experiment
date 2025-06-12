@@ -88,7 +88,7 @@ const myQuestions = [
         c: "It decreases gradually",
         d: "It decreases gradually"
       },
-      correctAnswer: c,
+      correctAnswer: "c",
       difficulty: "beginner"
     },
     {
@@ -99,7 +99,7 @@ const myQuestions = [
         c: "Label on the battery",
         d: "Time of day"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -110,7 +110,7 @@ const myQuestions = [
         c: "Separator to electrolyte",
         d: "Electrolyte to separator"
       },
-      correctAnswer: a,
+      correctAnswer: "a",
       difficulty: "beginner"
     },
     {
@@ -121,7 +121,7 @@ const myQuestions = [
         c: "To increase battery size",
         d: "To cool the battery"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -132,7 +132,7 @@ const myQuestions = [
         c: "It stays the same",
         d: "It becomes zero"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -143,7 +143,7 @@ const myQuestions = [
         c: "Avoiding physical damage",
         d: "Placing them in water"
       },
-      correctAnswer: c,
+      correctAnswer: "c",
       difficulty: "beginner"
     },
     {
@@ -154,7 +154,7 @@ const myQuestions = [
         c: "Always reduced performance",
         d: "Made the battery explode"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -165,7 +165,7 @@ const myQuestions = [
         c: "It makes the battery lighter",
         d: "It changes the color"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     },
     {
@@ -176,7 +176,7 @@ const myQuestions = [
         c: "Temperature vs. pressure",
         d: "Color vs. brightness"
       },
-      correctAnswer: a,
+      correctAnswer: "a",
       difficulty: "beginner"
     },
     {
@@ -187,7 +187,7 @@ const myQuestions = [
         c: "Current has no effect",
         d: "Battery life is infinite"
       },
-      correctAnswer: b,
+      correctAnswer: "b",
       difficulty: "beginner"
     }
 
