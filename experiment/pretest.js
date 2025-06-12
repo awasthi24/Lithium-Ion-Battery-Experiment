@@ -28,8 +28,8 @@
 
       // add this question and its answers to the output
       output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
+        `<div class=question> ${currentQuestion.question} </div>
+        <div class=answers> ${answers.join("")} </div>`
       );
     });
 
@@ -48,7 +48,7 @@
     myQuestions.forEach((currentQuestion, questionNumber) => {
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
+      const selector = input[name=question${questionNumber}]:checked;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       // if answer is correct
@@ -66,7 +66,7 @@
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    resultsContainer.innerHTML = ${numCorrect} out of ${myQuestions.length};
   }
 
   const quizContainer = document.getElementById("quiz");
@@ -81,116 +81,116 @@
 /////////////////////////////////////////////////////////////////////////////
 const myQuestions = [
     {
-      "question": "Which material is commonly used as the anode in a lithium-ion battery?",
-      "answers": {
-        "a": "Zinc",
-        "b": "Graphite",
-        "c": "Lead",
-        "d": "Nickel"
+      question: "Which material is commonly used as the anode in a lithium-ion battery?",
+      answers: {
+        a: "Zinc",
+        b: "Graphite",
+        c: "Lead",
+        d: "Nickel"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      correctAnswer: b,
+      difficulty: "beginner"
     },
     {
-      "question": "What is the main function of the separator in a lithium-ion battery?",
-      "answers": {
-        "a": "Conduct electricity",
-        "b": "Store energy",
-        "c": "Prevent direct contact between electrodes",
-        "d": "Provide mechanical strength"
+      question: "What is the main function of the separator in a lithium-ion battery?",
+      answers: {
+        a: "Conduct electricity",
+        b: "Store energy",
+        c: "Prevent direct contact between electrodes",
+        d: "Provide mechanical strength"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      correctAnswer: c,
+      difficulty: "beginner"
     },
     {
-      "question": "Which of the following is the electrolyte in most lithium-ion batteries?",
-      "answers": {
-        "a": "Sulfuric acid",
-        "b": "Potassium hydroxide",
-        "c": "Lithium salt in organic solvent",
-        "d": "Water"
+      question: "Which of the following is the electrolyte in most lithium-ion batteries?",
+      answers: {
+        a: "Sulfuric acid",
+        b: "Potassium hydroxide",
+        c: "Lithium salt in organic solvent",
+        d: "Water"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      correctAnswer: c,
+      difficulty: "beginner"
     },
     {
-      "question": "During discharge, lithium ions move from:",
-      "answers": {
-        "a": "Cathode to anode",
-        "b": "Anode to cathode",
-        "c": "Separator to electrolyte",
-        "d": "Electrolyte to separator"
+      question: "During discharge, lithium ions move from:",
+      answers: {
+        a: "Cathode to anode",
+        b: "Anode to cathode",
+        c: "Separator to electrolyte",
+        d: "Electrolyte to separator"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      correctAnswer: b,
+      difficulty: "beginner"
     },
     {
-      "question": "Which of these is NOT a rechargeable battery?",
-      "answers": {
-        "a": "Lithium-ion",
-        "b": "Lead-acid",
-        "c": "Nickel-cadmium",
-        "d": "Alkaline"
+      question: "Which of these is NOT a rechargeable battery?",
+      answers: {
+        a: "Lithium-ion",
+        b: "Lead-acid",
+        c: "Nickel-cadmium",
+        d: "Alkaline"
       },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
+      correctAnswer: d,
+      difficulty: "beginner"
     },
     {
-      "question": "The positive terminal of a lithium-ion battery is called:",
-      "answers": {
-        "a": "Anode",
-        "b": "Cathode",
-        "c": "Electrolyte",
-        "d": "Separator"
+      question: "The positive terminal of a lithium-ion battery is called:",
+      answers: {
+        a: "Anode",
+        b: "Cathode",
+        c: "Electrolyte",
+        d: "Separator"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      correctAnswer: b,
+      difficulty: "beginner"
     },
     {
-      "question": "What is the typical voltage of a single lithium-ion cell?",
-      "answers": {
-        "a": "1.2 V",
-        "b": "1.5 V",
-        "c": "3.7 V",
-        "d": "6 V"
+      question: "What is the typical voltage of a single lithium-ion cell?",
+      answers: {
+        a: "1.2 V",
+        b: "1.5 V",
+        c: "3.7 V",
+        d: "6 V"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      correctAnswer: c,
+      difficulty: "beginner"
     },
     {
-      "question": "Which statement is true about the movement of electrons in a lithium-ion battery during discharge?",
-      "answers": {
-        "a": "Electrons move from anode to cathode through external circuit",
-        "b": "Electrons move from cathode to anode through external circuit",
-        "c": "Electrons do not move",
-        "d": "Electrons move through the electrolyte"
+      question: "Which statement is true about the movement of electrons in a lithium-ion battery during discharge?",
+      answers: {
+        a: "Electrons move from anode to cathode through external circuit",
+        b: "Electrons move from cathode to anode through external circuit",
+        c: "Electrons do not move",
+        d: "Electrons move through the electrolyte"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      correctAnswer: a,
+      difficulty: "beginner"
     },
     {
-      "question": "Lithium-ion batteries are called ‘secondary batteries’ because:",
+      question: "Lithium-ion batteries are called ‘secondary batteries’ because:",
      
-      "answers": {
-        "a": "They are used as backup",
-        "b": "They can be recharged",
-        "c": "They are smaller in size",
-        "d": "They are less powerful"
+      answers: {
+        a: "They are used as backup",
+        b: "They can be recharged",
+        c: "They are smaller in size",
+        d: "They are less powerful"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      correctAnswer: b,
+      difficulty: "beginner"
     },
     {
-      "question": "Which of the following is an application of lithium-ion batteries?",
-      "answers": {
-        "a": "Car batteries",
-        "b": "Mobile phones",
-        "c": "Remote controls",
-        "d": "All of the above"
+      question: "Which of the following is an application of lithium-ion batteries?",
+      answers: {
+        a: "Car batteries",
+        b: "Mobile phones",
+        c: "Remote controls",
+        d: "All of the above"
       },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
-    }v
+      correctAnswer: d,
+      difficulty: "beginner"
+    }
 
 
 
@@ -218,7 +218,7 @@ const myQuestions = [
         c: "Option 3",
         d: "Option 4"
       },
-      correctAnswer: "c"
+      correctAnswer: c
     },
 
     Copy above section
